@@ -1,0 +1,92 @@
+.body{
+    width: 100%;
+    height: 100%;
+}
+.body h3{
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    line-height: 56px;
+    font-weight: 600;
+    padding: 0 10px;
+    color: #1F2D3D;
+    font-family: MicrosoftYaHei;
+}
+.body .ant-input-affix-wrapper{
+        width: 250px;
+}
+.body .search{
+    margin: 25px 0;
+}
+.body .search >span{
+    margin: 0 10px;
+}
+.body .search  .ant-btn-primary{
+    background-color:rgba(0,0,0,0);
+    border-color:#ccc;
+    color: #ccc;
+}
+.body .page >span{
+    margin: 0 15px;
+    line-height: 32px;
+}
+.body .page >span,.body .page >ul{
+    float: left;
+}
+.body .page .ant-pagination-item,.body .page .ant-pagination-prev{
+    margin:0;
+}
+.body .ant-pagination-item-active{
+    background-color: #1890ff;
+}
+.body .ant-pagination-item-active a{
+    color: white !important;
+}
+.Tips{
+    position: fixed;
+    width: 240px;
+    height: 160px;
+    left: calc(50% - 120px);
+    top: 300px;
+    z-index: 998;
+    border-radius: 5px;
+    border: 1px solid #D3DCE6;
+    background-color: white;
+    text-align: center;
+}
+.Tips i{
+    font-size: 60px;
+    color: #13CE66;
+}
+.Tips p{
+    font-size: 16px;
+    color: black;
+}
+.Tipsa{
+    animation:mymove .8s;
+    animation-fill-mode: forwards;
+}
+.Tipsb{
+    animation:myto .8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes mymove{
+        from {
+            top:0px;
+            opacity: 0;
+        }
+        to {
+            top:300px;
+            opacity: 1;
+        }
+}
+@keyframes myto{
+    from {
+        top:240px;
+        opacity:1;
+    }
+    to {
+        top:0;
+        opacity: 0;
+    }
+}

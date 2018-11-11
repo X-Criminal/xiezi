@@ -81,6 +81,11 @@ class app extends Component{
         const { getFieldDecorator } = this.props.form;
         return(
             <div className={"login"}>
+                <div className={"_loginTitle"}>
+                    <p>- Welcome</p>
+                    <p>华凯威-后台管理系统</p>
+                    <p>Huakingway-Background Management System</p>
+                </div>
                  <div className={"loginBody"}>
                             <img src={logo2} alt="logo2"/>
                             <p className={"loginTitle"}>登录</p>

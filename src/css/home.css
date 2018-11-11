@@ -3,6 +3,7 @@
 }
 .Home .ant-layout-header{
     background-color: #324057;
+    height: 90px;
 }
 .Home .userName{
     cursor:pointer;
@@ -55,21 +56,25 @@
 }
 .Home .ant-layout-sider{
     height:calc(100vh - 64px) ;
-    background-color: #324057;
+    background-color: white;
+    border-right:1px solid #ccc; 
 }
 .Home .ant-layout-sider ul{
-    background-color: #324057;
+    background-color: #ffffff;
 }
 .Home .ant-layout-sider ul li{
     margin: 0;
     border: none;
 }
 .Home .ant-layout-sider .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
-    background-color: #475669;
+    background-color: rgb(238, 255, 255);
     border: none;
+    color: rgb(14,147, 255);
+    font-size: 14px;
+    font-weight: 600;
 }
 .Home .ant-layout-sider .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected a{
-    color: #229df8;
+    color: rgb(14,147, 255);
 }
 .Home .ant-layout-sider ul a{
     color: #c1c6cc;
@@ -78,7 +83,6 @@
     margin-right: 8px;
 }
 .Home .ant-layout-content{
-    padding: 18px;
     box-sizing: border-box;
 }
 .Home .ant-layout {

@@ -1,8 +1,7 @@
 import React,{Component}                                        from "react";
 import {Layout,Menu}                                            from "antd";
- 
-
-
+import HEADER                                                   from "./header"
+import Body                                                     from "./body"
 import "../css/home.css";
 import "../font-icn/iconfont.css"
 /**路由组件 */  
@@ -32,7 +31,7 @@ const Home = (props)=>{
         <div className={"Home"}>
         <Layout>
             <Header>
-                {/* <HEADER /> */}
+                <HEADER /> 
             </Header>
             <Layout>
                 <Sider breakpoint={Enum}>
@@ -44,16 +43,15 @@ const Home = (props)=>{
                         theme="dark"
                     >
                         <Menu.Item key={"admin"}>
-                                <i className={"iconfont icon-user-manage"}></i>
+                                <i className={"iconfont icon-shezhi"}></i>&nbsp;&nbsp;
                                 管理员管理
                         </Menu.Item>
                     </Menu>
                 </Sider>
                 <Content>
-                    {/* <Switch>
-                            <Route  path="/admin"       component={ Admin}/>
-                            <Route                      component={ Admin}/>
-                    </Switch> */}
+                        <Body>
+                            
+                        </Body>
                 </Content>
             </Layout>
         </Layout>
