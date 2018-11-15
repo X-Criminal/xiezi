@@ -42,33 +42,27 @@ class app extends Component{
 
     /**登录 */
     handleSubmit = (e) => {
-        this.props.login( )
-        // e.preventDefault();
-        // this.props.form.validateFields((err, values) => {
-        //   if (!err) {
-        //       axios.post(url+"SmartPillow/web/admin/adminLogin",values)
-        //        // axios.post("http://172.16.10.16:8086/securitylock/web/admin/Login",values)
-        //              .then((res)=>{
-        //                  if(res.data.code===1000){
-        //                         let {age,createtime,idAdmin,name,telephone} = res.data.data;
-        //                         cookie.save("userData",{age:age,createtime:createtime,idAdmin:idAdmin,name:name,telephone:telephone});
-        //                         sessionStorage.setItem("adminAuths",JSON.stringify(res.data.data.adminAuths));
-        //                         this.props.login( )
-        //                  }else{
-        //                      this.setState({
-        //                         loginerr:"账号或密码错误"
-        //                      })
-        //                  }
-        //              })
-        //              .catch((err)=>{
-        //                 message.error("网络连接错误，请稍后再试~~")
-        //              })
-        //     }else{
-        //       console.log(err)
-        //   }
-        // });
+        e.preventDefault();
+        this.props.form.validateFields((err, values) => {
+          if (!err) {
+              axios.post(url+"/SmartShoes/admin/adminLogin",values)
+                     .then((res)=>{ 
+                            if(res.data.success){
+                                cookie.save("userData",res.data.data);
+                                message.success(res.data.message);
+                                this.props.login( );
+                            }else{
+                                message.error(res.data.message)
+                            }
+                     })
+                     .catch((err)=>{
+                        message.error("网络连接错误，请稍后再试~~")
+                     })
+            }else{
+              console.log(err)
+          }
+        });
       }
-
 
      /**错误提示*/
       onfocus=()=>{
@@ -91,14 +85,14 @@ class app extends Component{
                             <p className={"loginTitle"}>登录</p>
                             <Form onSubmit={this.handleSubmit} className="login-form Login">
                             <FormItem>
-                            {getFieldDecorator('telephone', {
+                            {getFieldDecorator('adminAccount', {
                                 rules: [{ required: true, message: '请输入用户名!' }],
                             })(
                                 <Input  key={"登陆账号"} prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} onFocus={this.onfocus} placeholder="账号" />
                             )}
                             </FormItem>
                             <FormItem>
-                            {getFieldDecorator('password', {
+                            {getFieldDecorator('adminPassword', {
                                 rules: [{ required: true, message: '请输入密码!' }] ,
                             })(
                                 <Input prefix={<Icon key={"登陆密码"} type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" onFocus={this.onfocus} placeholder="密码" />

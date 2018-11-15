@@ -9,14 +9,21 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state={
-        islogin:true,
+        islogin:false,
+    }
+  }
+  componentWillMount(){
+    sessionStorage.setItem("url","http://58.250.30.13:8952/");    
+    if(cookie.load("userData")){
+        this.setState({
+          islogin:true,
+        })
     }
   }
 
-
   login=( )=>{
     this.setState({
-        islogin:true,
+        islogin:!this.state.islogin,
     })
   }
 
