@@ -65,8 +65,7 @@ export default class App  extends Component {
                     _data[k] = data[k];
                 }
             }
-            
-            axios.post(url+"SmartShoes/admin/equipment/getEquipmentDetails",_data)
+            axios.post(url+"/SmartShoes/admin/equipment/getEquipmentDetails",_data)
                  .then((res)=>{
                      if(res.data.success){
                         this.setState({
@@ -74,7 +73,7 @@ export default class App  extends Component {
                             total:res.data.data.total,
                         })
                      }  
-                 }).catch(()=>{
+                 }).catch((err)=>{
                      message.error("网络连接错误，请稍后再试！")
                  })
 
@@ -87,8 +86,11 @@ export default class App  extends Component {
             this.init({pageNum:data})
      }
 
-     onSearch=( )=>{
-        this.init({})
+     onSearch=( e )=>{
+         this.setState({
+            pageNum:1
+         })
+        this.init({pageNum:1})
      }
 
      rowSelection = {
@@ -108,7 +110,7 @@ export default class App  extends Component {
           this.setState({
             loading:true,
           })
-          axios.post(url+"/SmartShoes/admin/equipment/deleteEquipmentListByShoesId",{shoesId:this.state.RowKeys[0]})
+          axios.post(url+"/SmartShoes/admin/equipment/deleteEquipmentListByShoesId",{shoesIds:this.state.RowKeys})
                 .then((res)=>{
                     if(res.data.success){
                         this.showTips( );

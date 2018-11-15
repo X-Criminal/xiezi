@@ -13,7 +13,7 @@ class App extends Component {
     }
   }
   componentWillMount(){
-    sessionStorage.setItem("url","http://58.250.30.13:8952/");    
+    sessionStorage.setItem("url","http://58.250.30.13:8086");    
     if(cookie.load("userData")){
         this.setState({
           islogin:true,
