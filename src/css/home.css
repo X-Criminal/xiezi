@@ -91,3 +91,72 @@
 .Home .ant-layout .ant-table-thead > tr > th{
     background-color: rgb(229,232,242)
 }
+
+@media screen and (max-width: 1025px) {
+    ._loginTitle{
+        display: none;
+    }
+    .login{
+        background-size: 100% 100%;
+        min-width: 100%;
+    }
+    .login .loginBody{
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    .Home{
+        width: 100%;
+        min-width: 100%;
+    }
+    .Home .ant-layout-sider{
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 415px) {
+    ._loginTitle{
+        display: none;
+    }
+    .login{
+        background-size: 100% 100%;
+        min-width: 100%;
+    }
+    .login .loginBody{
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 95%;
+    }
+    .login .Login{
+        width: 95%;
+        margin: 0;
+    }
+    .body h3{
+        display: none;
+    }
+    .Home .ant-layout-header{
+        padding: 0;
+    }
+    .header >span{
+        font-size: 14px;
+    }
+    .header img{
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+    }
+    .Home .userName{
+        margin-right: 10px;
+    }
+    .search span:nth-child(3){
+        margin-left:86px ;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .search span:nth-child(4){
+        margin-left:86px ;
+    }
+}

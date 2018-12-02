@@ -18,7 +18,7 @@ export default class App  extends Component {
             pageNum:1,
             onSearch:"",
 
-            Lis:[],
+            Lis:[{userId:"1"}],
             total:0,
             RowKeys:[],
 
